@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="polls.html">POLLS</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link" href="#">Vote</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link" href="create.html">Create</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link" href="list.html">List</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <button class="btn my-2 my-sm-0" type="submit">Login</button>
+        </form>
+    </div>
+</nav>
+
+
+<div class="container">
+    <h2>Create Interview</h2>
+    <div class="container">
+        <form action="" onsubmit="return validateForm()">
+            <div class="row">
+                <div class="col-xl-3">
+                    <p style="float: right; padding-top: 196px;">Possible answers</p>
+                </div>
+
+                <div class="col-xl-9" id="acc">
+                    <div>
+                        <input type="text" class="form-control a" name="Enter Name polls" placeholder="Name polls">
+                        <p class="err"></p>
+                    </div>
+
+                    <div id="div-add">
+                        <div id="firstForm">
+                            <hr>
+                            <div>
+                                <input type="text" class="form-control a" name="Enter your questions" placeholder="Enter your questions">
+                                <p class="err"></p>
+                            </div>
+
+                            <div>
+                                <input type="checkbox" class="">Mandatory
+                            </div>
+
+                            <div>
+                                <input type="checkbox" class="">you can select mutiple options
+                            </div>
+
+                            <div class="group" id="gruop"></div>
+
+                            <div class="input-group ">
+                                <input type="text" class="form-control a" name="Type your answers" placeholder="Type your answers">
+                                <input type="button" onclick="add()" class="input-group-append btn btn-primary" value="+">
+                            </div>
+                            <p class="err"></p>
+                        </div>
+                    </div>
+
+                    <input type="submit" onclick="retain()" class="btn btn-primary retain" value="Retain">
+                    <input type="button" onclick="addNewForm()" class="btn btn-warning retain" value="Add question">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="js/js.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+.navbar{
+    padding: 0px !important;
+    background-color: rgb(29, 31, 28) !important;
+    color: white !important;
+    padding: 10px !important;
+}
+
+.nav-link{
+    color: white !important;
+}
+
+button.btn.my-2.my-sm-0 {
+    background-color: rgb(29, 31, 28);
+    color: white;
+}
+
+button.btn.my-2.my-sm-0:hover {
+    background-color: white !important;
+    color: black !important;
+}
+
+h3.title-h3 {
+    text-align: center;
+    padding: 30px;
+}
+
+.polls ul li {
+    list-style: none;
+}
+
+input[type="radio"] {
+    margin-right: 20px;
+}
+
+.polls > h3{
+    padding-top: 20px;
+}
+
+.retain {
+    margin-top: 20px;
+}
+
+input[type=checkbox]{
+    margin: 10px 4px;
+}
+
+.error{
+    border-color: red !important;
+}
+
+table.table.table-bordered {
+    margin-top: 45px;
+}
+
+.btn-group {
+    margin-top: 20px;
+}
+
+h2{
+    margin-top: 30px !important;
+}
