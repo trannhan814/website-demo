@@ -1,3 +1,5 @@
+
+const formContainer = document.getElementById("div-add");
 function send() {
     let arr = document.getElementsByTagName('input')
     let a = document.getElementById('error')
@@ -36,121 +38,171 @@ function send() {
 function retain() {
     let arr = document.getElementsByClassName('a');
     let b = document.getElementsByClassName("err");
+    console.log(b);
     for(let a in arr){
         if(arr[a].value === ''){
             b[a].innerText= arr[a].getAttribute('placeholder');
             b[a].style='color: red';
             arr[a].classList.add('error')
-        }else {
-            b[a].innerText= '';
-            arr[a].classList.remove('error')
         }
     }
 }
-let initFirstFormName = document.getElementById('firstForm1');
-let counterClick = 0;
+
+// let counterClick = 0;
+// function addNewForm() {
+//     console.log("Dit me m")
+//     counterClick = counterClick + 1;
+//
+//     let newForm = document.createElement('div');
+//     newForm.id = "firstForm" + counterClick;
+//     let hr = document.createElement("hr");
+//     newForm.appendChild(hr);
+//
+//     const newDivInput1 = document.createElement("div")
+//     let newInput1 = document.createElement("input");
+//     newInput1.classList.add('form-control');
+//     newInput1.classList.add('a');
+//     newInput1.placeholder = "Enter your questions";
+//     newInput1.type = 'text';
+//     let p1 = document.createElement("p");
+//     p1.classList.add("err");
+//     newDivInput1.appendChild(newInput1);
+//     newDivInput1.appendChild(p1)
+//     newForm.appendChild(newDivInput1);
+//
+//     let checkbox1 = document.createElement("input");
+//     checkbox1.type = 'checkbox'
+//     let label1 = document.createElement('label')
+//     label1.textContent = 'Mandatory';
+//     newForm.appendChild(checkbox1);
+//     newForm.appendChild(label1)
+//
+//     let br = document.createElement('br')
+//     newForm.appendChild(br)
+//
+//     let checkbox2 = document.createElement("input");
+//     checkbox2.type = 'checkbox'
+//     let label2 = document.createElement('label')
+//     label2.textContent = 'you can select mutiple options';
+//     newForm.appendChild(checkbox2);
+//     newForm.appendChild(label2)
+//
+//     let groupInput = document.createElement("div");
+//     groupInput.classList.add("group" + counterClick);
+//     groupInput.id = "group" + counterClick;
+//     newForm.appendChild(groupInput);
+//
+//
+//     let newDivInput3 = document.createElement("div");
+//     newDivInput3.classList.add("input-group");
+//
+//     let newInput3 = document.createElement("input");
+//     newInput3.classList.add('form-control');
+//     newInput3.classList.add('a');
+//     newInput3.placeholder = "Type your answers";
+//     newInput3.type = 'text';
+//     newDivInput3.appendChild(newInput3);
+//
+//
+//     let newInput4 = document.createElement("input");
+//     newInput4.classList.add('input-group-append'+counterClick);
+//     newInput4.classList.add('btn');
+//     newInput4.classList.add('btn-primary');
+//     newInput4.type = 'button';
+//     newInput4.value = "+";
+//
+//     newInput4.addEventListener('click', function add1() {
+//         console.log('Dit cu m')
+//         let newDiv = document.createElement("div");
+//         newDiv.id ='newDiv'+counterClick;
+//         let groupInput = document.getElementById("group" + counterClick);
+//         groupInput.appendChild(newDiv);
+//
+//         let newInputAddToGroup = document.createElement("input");
+//         newInputAddToGroup.classList.add('form-control');
+//         newInputAddToGroup.classList.add('a');
+//         newInputAddToGroup.classList.add('b'+counterClick)
+//         newInputAddToGroup.placeholder = "Type your answers";
+//         newInputAddToGroup.type = 'text';
+//         let getNewDiv = document.getElementById("newDiv" + counterClick);
+//         getNewDiv.appendChild(newInputAddToGroup);
+//
+//         let p1 = document.createElement("p");
+//         p1.classList.add("err");
+//         getNewDiv.appendChild(p1);
+//
+//     })
+//     newDivInput3.appendChild(newInput4);
+//
+//     let p3 = document.createElement("p");
+//     p3.classList.add("err");
+//     newForm.appendChild(newDivInput3);
+//     newForm.appendChild(p3)
+//
+//
+//     let divAdd = document.getElementById("div-add");
+//     divAdd.appendChild(newForm);
+//     console.log(newForm);
+// }
+
+// function add() {
+//     let input = document.createElement("input");
+//     input.placeholder = 'Type your answers';
+//     input.className = 'form-control a';
+//     input.name = "Type your answers";
+//
+//     let p = document.createElement("p");
+//     p.className = 'err';
+//
+//     document.getElementById('gruop').appendChild(input);
+//     document.getElementById('gruop').appendChild(p);
+// }
+
 function addNewForm() {
-    counterClick = counterClick + 1;
+    const formContainer = document.getElementById("div-add");
+    console.log(formContainer);
+    let newQuestion = `
+        <div id="firstForm">
+            <hr>
+            <div>
+                <input type="text" class="form-control a" name="Enter your questions" placeholder="Enter your questions">
+                <p class="err"></p>
+            </div>
 
-    let newForm = document.createElement('div');
-    newForm.id = "firstForm" + counterClick;
-    let hr = document.createElement("hr");
-    newForm.appendChild(hr);
-    
-    const newDivInput1 = document.createElement("div")
-    let newInput1 = document.createElement("input");
-    newInput1.classList.add('form-control');
-    newInput1.classList.add('a');
-    newInput1.placeholder = "Enter your questions";
-    newInput1.type = 'text';
-    let p1 = document.createElement("p");
-    p1.classList.add("err");
-    newDivInput1.appendChild(newInput1);
-    newDivInput1.appendChild(p1)
-    newForm.appendChild(newDivInput1);
+            <div>
+                <input type="checkbox" class="">Mandatory
+            </div>
 
+            <div>
+                <input type="checkbox" class="">you can select mutiple options
+            </div>
 
-    let groupInput = document.createElement("div");
-    groupInput.classList.add("group" + counterClick);
-    groupInput.id = "group" + counterClick;
-    newForm.appendChild(groupInput);
-
-
-    let newDivInput3 = document.createElement("div");
-    newDivInput3.classList.add("input-group");
-
-    let newInput3 = document.createElement("input");
-    newInput3.classList.add('form-control');
-    newInput3.classList.add('a');
-    newInput3.placeholder = "Type your answers";
-    newInput3.type = 'text';
-    newDivInput3.appendChild(newInput3);
-
-    let newInput4 = document.createElement("input");
-    newInput4.classList.add('input-group-append');
-    newInput4.classList.add('btn');
-    newInput4.classList.add('btn-primary');
-    newInput4.type = 'button';
-    newInput4.value = "+";
-    newInput4.addEventListener('click', function() {
-        let newDiv = document.createElement("div");
-
-        let newInputAddToGroup = document.createElement("input");
-        newInputAddToGroup.classList.add('form-control');
-        newInputAddToGroup.classList.add('a');
-        newInputAddToGroup.placeholder = "Type your answers";
-        newInputAddToGroup.type = 'text';
-
-        let p1 = document.createElement("p");
-        p1.classList.add("err");
-
-        newDiv.appendChild(newInputAddToGroup);
-        newDiv.appendChild(p1);
-
-        let groupInput = document.getElementById("group" + counterClick);
-        groupInput.appendChild(newDiv);
-    })
-    newDivInput3.appendChild(newInput4);
-
-    let p3 = document.createElement("p");
-    p3.classList.add("err");
-    newForm.appendChild(newDivInput3);
-    newForm.appendChild(p3)
-
-
-    let divAdd = document.getElementById("div-add");
-    divAdd.appendChild(newForm);
-    console.log(newForm);
+            <div class="group" id="group">
+                <div class="input-group ">
+                    <input type="text" class="form-control a" name="Type your answers" placeholder="Type your answers">
+                    <input type="button" class="input-group-append btn btn-primary" value="+">
+                </div>
+                <p class="err"></p>
+            </div>
+        </div>
+    `;
+    formContainer.innerHTML += newQuestion;
 }
 
-function add() {
-    let input = document.createElement("input");
-    input.placeholder = 'Type your answers';
-    input.className = 'form-control a';
-    input.name = "Type your answers";
+formContainer.addEventListener('click', function(e){
 
-    let p = document.createElement("p");
-    p.className = 'err';
-
-    document.getElementById('gruop').appendChild(input);
-    document.getElementById('gruop').appendChild(p);
-}
-
-function add1() {
-    let a = document.getElementById('');
-    if(a = 'gruop1'){
-            let input = document.createElement("input");
-            input.placeholder = 'Type your answers';
-            input.className = 'form-control a';
-            input.name = "Type your answers";
-
-            let p = document.createElement("p");
-            p.className = 'err';
-
-            document.getElementById('gruop1').appendChild(input);
-            document.getElementById('gruop1').appendChild(p);
+    if(e.target.classList.contains("input-group-append")){
+        const parentGroup = e.target.parentElement.parentElement;
+        parentGroup.innerHTML += `
+            <div class="input-group ">
+                <input type="text" class="form-control a" name="Type your answers" placeholder="Type your answers">
+                
+            </div>
+            <p class="err"></p>
+        `
+        // console.log(e.target.parentElement.parentElement);
     }
-}
+})
 
 function validateForm() {
     return false

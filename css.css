@@ -64,3 +64,11 @@ table.table.table-bordered {
 h2{
     margin-top: 30px !important;
 }
+
+.err p{
+    color: red;
+}
+
+.errDisplay{
+    display: none;
+}
